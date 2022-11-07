@@ -26,12 +26,24 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%- link_to "Home"%>
+                  <%= link_to "Home",%>
+                </li>
+                <li>
+                  <%= link_to "Users",%>
+                </li>
+                <li>
+                  <%= link_to "Books",%>
                 </li>
                 <li>
                   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
+                <li>
+                  <%= link_to "Home",%>
+                </li>
+                <li>
+                  <%= link_to "About",%>
+                </li>
                 <li>
                   <%= link_to "Sign up", new_user_registration_path %>
                 </li>
