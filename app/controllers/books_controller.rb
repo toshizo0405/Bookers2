@@ -11,5 +11,12 @@ class BooksController < ApplicationController
   
   def edit
   end
+
+  private
   
+  def book_params
+    params.require(:book).permit(:title, :body, :image)  
+  end
+
+
 end
