@@ -1,6 +1,6 @@
 <h2 class="mt-3">User info</h2>
-<% if book.image.attached? %>
-  <%= image_tag list.image, size: "100x100" %>
+<% if @user.profile_image.attached? %>
+  <%= image_tag @user,profile_image, size: "100x100" %>
 <% else %>
  <%= image_tag 'default-image', size: "100x100" %>
 <% end %>
