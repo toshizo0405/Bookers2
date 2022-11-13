@@ -1,4 +1,8 @@
-<h2 class="mt-3">User info</h2>
+<p id="notice"></p>
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="mt-3">User info</h2>
 <% if @user.profile_image.attached? %>
   <%= image_tag @user,profile_image, size: "100x100" %>
 <% else %>
@@ -6,7 +10,10 @@
 <% end %>
 
 
-<%= form_with model: Book.new do |f| %>
+<div class="row">
+<%= form_with model: User.new do |f| %>
+
+<%= f.submit class: 'btn btn-outline-secondary btn-block'%>
 
 <h2 class="mt-3">New book</h2>
 
@@ -19,3 +26,14 @@
 <%= f.submit 'Create Book',class: 'btn btn-success' %>
 
 <% end %>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
