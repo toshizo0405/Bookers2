@@ -1,3 +1,39 @@
 <%= render 'books/list', user: @user %>
 
+<div class="col-md-8 offset-md-1">
+  <h2>Book detail</h2>
+  <table class="table">
+    <tbody>
+    <% @books.each do |book| %>
+    <thead>
+      <tr>
+        <td>
+          <% if @user.profile_image.attached? %>
+            <%= image_tag @user.profile_image, size: "100x100" %>
+          <% else %>
+            <%= image_tag 'default-image', size: "100x100" %>
+          <% end %>
+          <%= link_to user_path(current_user) do %>
+          <%= user.name %>
+          <% end %>
+        </td>
 
+        <td>
+          <%= link_to  book_path(current_user) do %>
+             <%= book.title %>
+          <% end %>
+        </td>
+        <td>
+          <%= book.body %>
+        </td>
+        <td>
+          <% if @book.user == current_user %>
+            <%= link_to "Destroy", books_path, method: :delete %>
+          <% end %>
+        </td>
+      </tr>
+      </thead>
+      <% end %>
+    </tbody>
+  </table>
+</div>

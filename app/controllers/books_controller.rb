@@ -26,9 +26,14 @@ class BooksController < ApplicationController
       @books = Book.all
       render 'index'
     end
+    
+    def destroy
+    @user =User.find(params[:id])
+    @book.destroy
+    redirect_to books_path
+    end
+    
   end
-
-
 
 
   private
