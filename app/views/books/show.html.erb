@@ -4,8 +4,7 @@
   <h2>Book detail</h2>
   <table class="table">
     <tbody>
-    <% @books.each do |book| %>
-    <thead>
+    
       <tr>
         <td>
           <% if @user.profile_image.attached? %>
@@ -14,17 +13,17 @@
             <%= image_tag 'default-image', size: "100x100" %>
           <% end %>
           <%= link_to user_path(current_user) do %>
-          <%= user.name %>
+          <%= @user.name %>
           <% end %>
         </td>
 
         <td>
           <%= link_to  book_path(current_user) do %>
-             <%= book.title %>
+             <%= @book.title %>
           <% end %>
         </td>
         <td>
-          <%= book.body %>
+          <%= @book.body %>
         </td>
         <td>
           <% if @book.user == current_user %>
@@ -32,8 +31,7 @@
           <% end %>
         </td>
       </tr>
-      </thead>
-      <% end %>
+      
     </tbody>
   </table>
 </div>
