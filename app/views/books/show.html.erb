@@ -4,15 +4,16 @@
   <h2>Book detail</h2>
   <table class="table">
     <tbody>
-    
+
       <tr>
         <td>
+          <%= link_to user_path(current_user) do %>
           <% if @user.profile_image.attached? %>
             <%= image_tag @user.profile_image, size: "100x100" %>
           <% else %>
             <%= image_tag 'default-image', size: "100x100" %>
           <% end %>
-          <%= link_to user_path(current_user) do %>
+          <br>
           <%= @user.name %>
           <% end %>
         </td>
@@ -31,7 +32,7 @@
           <% end %>
         </td>
       </tr>
-      
+
     </tbody>
   </table>
 </div>
