@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book= Book.find(params[:id]) 
   end
   
   def create
@@ -27,13 +28,15 @@ class BooksController < ApplicationController
       render 'index'
     end
     
+  end
+  
     def destroy
-    @user =User.find(params[:id])
+    @book =Book.find(params[:id])
     @book.destroy
     redirect_to books_path
     end
     
-  end
+  
 
 
   private
