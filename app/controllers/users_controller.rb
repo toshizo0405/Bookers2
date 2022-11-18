@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users=User.all
+    @books=Book.all
     @user=current_user
   end
 
