@@ -6,6 +6,7 @@
   <table class="table">
      <thead>
        <tr>
+         <th></th>
          <th>Title</th>
          <th>Opinion</th>
          <th colspan="3"></th>
@@ -21,15 +22,20 @@
                         <% else %>
                              <%= image_tag 'default-image', size: "80x80" %>
                         <% end %>
+                 </td>
                  <td>
                     <%= link_to  book_path(book) do %>
-                        <%= book.title %>
-                        <% end %>
-                   <% end %>
-                        </td>
-                        <td>
-                             <%= book.body %>
-                        </td>
-                    </tr>
-                <% end %>
+                      <%= book.title %>
+                      <% end %>
+                    <% end %>
+                  </td>
+                  <td>
+                  　<%= book.body %>
+                  </td>
+             </tr>
+        <% end %>
      </tbody>
+  </table>
+</div>
+</div>
+</div>
