@@ -1,2 +1,18 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<p id="notice"></p>
+<div class="container">
+ <div class="row">
+   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h2>User info</h2>
+     <%= form_with model: @user do |f| %>
+     <div class="form-group">
+      <lebel for="user_name">Name</lebel>
+      <%= f.text_field :name ,class: 'form-control'%>
+      <div class="form-group">
+       <label for="user_image">Image</label>
+       <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*",class: 'form-control-file' %>  
+      </div>
+     <% end %>
+     </div>
+   </div>
+ </div>
+</div>
