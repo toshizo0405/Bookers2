@@ -1,15 +1,15 @@
 <%= render  'books/list', user: @user,book: @book_new %>
 
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>error prohibited this obj from being saved:</br>
-  <%= @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
 
 
 
         <div class="col-md-8 offset-md-1">
+        <% if @book.errors.any? %>
+          <%= @book.errors.count %>error prohibited this obj from being saved:</br>
+          <% @book.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
          <h2>Books</h2>
             <table class="table table-hover table-inverse">
                 <thead>
