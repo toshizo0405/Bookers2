@@ -1,8 +1,18 @@
+        
+
+
+
 <p id="notice"></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
+      <% if @book.errors.any? %>
+          <%= @book.errors.count %>error prohibited this obj from being saved:</br>
+          <% @book.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
       <%= form_with model: @book do |f| %>
       <div class="form-group">
         <lebel for="book_title">Title</lebel>
