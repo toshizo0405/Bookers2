@@ -7,7 +7,7 @@
 
       <tr>
         <td>
-          <%= link_to user_path(current_user) do %>
+          <%= link_to user_path(@book.user) do %>
           <% if @user.profile_image.attached? %>
             <%= image_tag @user.profile_image, size: "100x100" %>
           <% else %>
