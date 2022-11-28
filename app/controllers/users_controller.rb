@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @book_new=Book.new
     @books=Book.all
     @user=current_user
     @users=User.all
@@ -35,8 +36,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-     @book = Book.find(params[:id])
-     @user = @book.user
+     @user = User.find(params[:id])
     redirect_to(books_path) unless @user == current_user
   end
 
